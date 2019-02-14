@@ -1,0 +1,111 @@
+﻿<Window x:Class="JFront.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:JFront"
+        Title="MainWindow" Height="650" Width="825" Icon="Resources/app.ico">
+    <Grid>
+        <Grid.Resources>
+            <local:EnumBooleanConverter x:Key="EnumMatchToBooleanConverter" />
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="600" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+
+        <Calendar Grid.Column="0" Height="200" HorizontalAlignment="Left" Margin="12,12,0,0" 
+                  Name="calendar1" SelectionMode="SingleDate"
+                  VerticalAlignment="Top" Width="180" IsTodayHighlighted="True">
+            <Calendar.RenderTransform>
+                <ScaleTransform CenterX="0" CenterY="0" ScaleX="3" ScaleY="3" />
+            </Calendar.RenderTransform>
+        </Calendar>
+
+        <StackPanel Grid.Column="1">
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=None}" Content="すべて" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code01}" Content="ｱｸｾ" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code02}" Content="服飾" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code03}" Content="ｱﾊﾟﾚﾙ" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code04}" Content="ｷｯﾁﾝ" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code05}" Content="ｲﾝﾃﾘｱ" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code06}" Content="ﾘﾗｸ" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code07}" Content="ﾍﾞﾋﾞｰ" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code08}" Content="ｲﾝﾅｰ" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code09}" Content="ｸﾞﾘｰﾝ" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code10}" Content="ｼｰｽﾞﾝ" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code11}" Content="ｲﾍﾞﾝﾄ" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code12}" Content="ｼﾞｭﾆｱ" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton GroupName="Category" IsChecked="{Binding Path=CategoryType, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Code99}" Content="その他" Margin="10">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1.5" ScaleY="1.5" />
+                </RadioButton.RenderTransform>
+            </RadioButton>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2">
+            <Button Content="照会" HorizontalAlignment="Left" Click="Button_Click" Margin="10">
+                <Button.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="3" ScaleY="3" />
+                </Button.RenderTransform>
+            </Button>
+            <Button Content="設定" HorizontalAlignment="Left" Click="Button2_Click" Margin="10">
+                <Button.RenderTransform>
+                    <ScaleTransform CenterX="0" CenterY="-30" ScaleX="3" ScaleY="3" />
+                </Button.RenderTransform>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

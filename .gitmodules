@@ -1,0 +1,6 @@
+[submodule "lib/Text.Net"]
+	path = lib/Text.Net
+	url = https://github.com/GangDuo/Text.Net.git
+[submodule "lib/MsOffice.Net"]
+	path = lib/MsOffice.Net
+	url = https://github.com/GangDuo/MsOffice.Net.git
