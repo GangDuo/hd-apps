@@ -10,10 +10,10 @@ namespace Logistics.Converter.Stock
 {
     class Source
     {
-        [Index(7)]
+        [Index(1)]
         public string JanCode { get; set; }
 
-        [Index(16)]
+        [Index(2)]
         [TypeConverter(typeof(Int32Converter))]
         public int Qty { get; set; }
     }

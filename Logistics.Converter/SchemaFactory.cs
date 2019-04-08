@@ -13,7 +13,7 @@ namespace Logistics.Converter
         {
             { 10, typeof(Shipment.Schema)},
             { 21, typeof(Receipt.Schema)},
-            { 56, typeof(Stock.Schema)},
+            { 7, typeof(Stock.Schema)},
         };
         private static Encoding DefaultEncoding = Encoding.GetEncoding("SHIFT_JIS");
 
