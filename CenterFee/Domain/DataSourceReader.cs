@@ -142,28 +142,13 @@ namespace CenterFee.Domain
             // 支払日情報を追加
             private static void StampPaymentDateField(DataTable table)
             {
-                var preCode = 0;
-                var isOverBorder = false;
+                var suppliers = new Supplier();
+                suppliers.Load();
                 foreach (DataRow row in table.Rows)
                 {
-                    var code = int.Parse(row[Entity.Literal.SupplierCodeField].ToString());
-                    var value = String.Empty;
-                    if (code == 272 || code == 610)
-                    {
-                        value = "その他";
-                        preCode = 0;
-                    }
-                    else if (!isOverBorder && preCode < code)
-                    {
-                        value = "末日払い";
-                        preCode = code;
-                    }
-                    else
-                    {
-                        isOverBorder = true;
-                        value = "10日払い";
-                        preCode = code;
-                    }
+                    var code = String.Format("{0:0000}", int.Parse(row[Entity.Literal.SupplierCodeField].ToString()));
+                    var supplier = suppliers.FindByCode(code);
+                    var value = supplier["payment_date"].ToString() + "払い";
                     row[Entity.Literal.PaymentDateField] = value;
                 }
                 table.AcceptChanges();
