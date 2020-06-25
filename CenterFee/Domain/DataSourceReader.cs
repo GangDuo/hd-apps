@@ -142,11 +142,14 @@ namespace CenterFee.Domain
             // 支払日情報を追加
             private static void StampPaymentDateField(DataTable table)
             {
+                var atypicalCodes = new int[] { 749 };
                 var suppliers = new Supplier();
                 suppliers.Load();
                 foreach (DataRow row in table.Rows)
                 {
-                    var code = String.Format("{0:0000}", int.Parse(row[Entity.Literal.SupplierCodeField].ToString()));
+                    var rawCode = int.Parse(row[Entity.Literal.SupplierCodeField].ToString());
+                    // 取引先コードは原則4桁であるが、5桁の取引先コードが数社あるため読み替えする。
+                    var code = String.Format(atypicalCodes.Contains(rawCode) ? "{0:0000}0" : "{0:0000}", rawCode);
                     var supplier = suppliers.FindByCode(code);
                     var value = supplier["payment_date"].ToString() + "払い";
                     row[Entity.Literal.PaymentDateField] = value;
